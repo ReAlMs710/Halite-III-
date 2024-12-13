@@ -21,10 +21,9 @@ public class GeneticBot {
 
         for (;;) {
             game.updateFrame();
-            if (isEvolving){
-                if (game.turnNumber == 1) {
+                if (isEvolving && game.turnNumber == 1) {
                     Parameters.saveInitialState(game);
-                } else if (game.turnNumber == Constants.MAX_TURNS){
+                } else if (isEvolving && game.turnNumber == Constants.MAX_TURNS) {
                     Parameters.writeFitness(game);
                 }
             }
